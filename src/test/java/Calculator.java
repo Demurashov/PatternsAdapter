@@ -2,13 +2,16 @@ public class Calculator {
     public Formula newFormula() {
         return new Formula();
     }
+
     public static enum Operation {
         SUM, SUB, MULT, DIV, POW;
     }
+
     public static class Formula {
         protected Double a, b, result;
 
-        protected Formula() {}
+        protected Formula() {
+        }
 
         public Formula addOperand(double operand) {
             if (a == null) {
@@ -20,6 +23,7 @@ public class Calculator {
             }
             return this;
         }
+
         public Formula calculate(Operation op) {
             if (a == null || b == null)
                 throw new IllegalStateException("Not enough operands!");
